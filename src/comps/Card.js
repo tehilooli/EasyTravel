@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
   expandOpen: {
     transform: 'rotate(180deg)',
   },
-  favorite: {
+  outline: {
     outline: 'none!important',
   },
   like: {
@@ -82,15 +82,13 @@ export default function RecipeReviewCard(props) {
       <CardActions disableSpacing>
         <IconButton 
           aria-label="add to favorites" 
-          className={clsx(classes.favorite, classes.like, {[classes.liked]: liked})}
+          className={clsx(classes.outline, classes.like, {[classes.liked]: liked})}
           onClick={handleLikeClick}
           >         
             <FavoriteIcon />
         </IconButton>
         <IconButton
-          className={clsx(classes.expand, {
-            [classes.expandOpen]: expanded,
-          })}
+          className={clsx(classes.outline, classes.expand, {[classes.expandOpen]: expanded,})}
           onClick={handleExpandClick}
           aria-expanded={expanded}
           aria-label="show more"
