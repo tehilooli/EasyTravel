@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import CityPage from './CityPage';
 import HomePage from './HomePage';
+import CityPage from './CityPage';
 import Flights from './Flights';
 import WhereToStay from './WhereToStay';
 import Attractions from './Attractions';
@@ -21,7 +21,7 @@ export default class EasyTravel extends Component {
 
     render() {
         if (this.state.currentPage === "HomePage") return <HomePage onPageChange={this.handlePageChange} />
-        else if (this.state.currentPage === "CityPage") return <CityPage selectedCity={this.state.selectedObject} onPageChange={this.handlePageChange} />
+        else if (this.state.currentPage === "CityPage") return <CityPage onPageChange={this.handlePageChange} selectedCity={this.state.selectedObject}/>
         else if (this.state.currentPage === "AttractionsPage") return <Attractions onPageChange={this.handlePageChange} />
         else if (this.state.currentPage === "FlightsPage") return <Flights onPageChange={this.handlePageChange} />
         else if (this.state.currentPage === "RestaurantsPage") return <Restaurants onPageChange={this.handlePageChange} />

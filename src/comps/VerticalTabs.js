@@ -1,14 +1,14 @@
 import React from 'react';
+import Flights from './Flights';
+import WhereToStay from './WhereToStay';
+import Attractions from './Attractions';
+import Restaurants from './Restaurants';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-import Flights from './Flights';
-import WhereToStay from './WhereToStay';
-import Attractions from './Attractions';
-import Restaurants from './Restaurants';
 import { lightBlue } from '@material-ui/core/colors';
 
 function TabPanel(props) {
@@ -20,7 +20,6 @@ function TabPanel(props) {
             hidden={value !== index}
             id={`vertical-tabpanel-${index}`}
             aria-labelledby={`vertical-tab-${index}`}
-            style={{ height: "1000px" }}
             {...other}
         >
             {value === index && (
@@ -55,6 +54,9 @@ const useStyles = makeStyles((theme) => ({
     tabs: {
         borderRight: `1px solid ${theme.palette.divider}`,
     },
+    panels: {
+        outline: 'none!important'
+    }
 }));
 
 export default function VerticalTabs(props) {
@@ -76,10 +78,10 @@ export default function VerticalTabs(props) {
                 className={classes.tabs}
                 style={{ height: "1000px" }}
             >
-                <Tab label={props.optionsList[0]} {...a11yProps(0)} />
-                <Tab label={props.optionsList[1]} {...a11yProps(1)} />
-                <Tab label={props.optionsList[2]} {...a11yProps(2)} />
-                <Tab label={props.optionsList[3]} {...a11yProps(3)} />
+                <Tab label={props.optionsList[0]} className={classes.panels} {...a11yProps(0)} />
+                <Tab label={props.optionsList[1]} className={classes.panels} {...a11yProps(1)} />
+                <Tab label={props.optionsList[2]} className={classes.panels} {...a11yProps(2)} />
+                <Tab label={props.optionsList[3]} className={classes.panels} {...a11yProps(3)} />
             </Tabs>
             <TabPanel value={value} index={0}>
                 <Flights></Flights>
@@ -91,7 +93,7 @@ export default function VerticalTabs(props) {
                 <Attractions currentCity={props.selectedCity}></Attractions>
             </TabPanel>
             <TabPanel value={value} index={3}>
-                <Restaurants></Restaurants>
+                <Restaurants currentCity={props.selectedCity}></Restaurants>
             </TabPanel>
         </div>
     );

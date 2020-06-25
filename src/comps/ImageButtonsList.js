@@ -1,7 +1,7 @@
+import React from 'react';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
-import React from 'react';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -79,9 +79,10 @@ const useStyles = makeStyles((theme) => ({
 export default function ButtonBases(props) {
     const classes = useStyles();
     const onPageChange = props.onPageChange;
+    
     return (
         <div className={classes.root}>
-            {props.buttonList.map((image) => (
+            {props.citiesList.map((image) => (
                 <ButtonBase
                     focusRipple
                     key={image.title}

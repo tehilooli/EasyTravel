@@ -1,34 +1,34 @@
 import React, { Component } from 'react';
-import ImageButtonsList from './ImageButtonsList';
 import NavBar from './NavBar';
+import ImageButtonsList from './ImageButtonsList';
 
-const citiesImages = [
+const cities = [
     {
-        url: '../images/paris.jpg',
+        url: '../images/paris/paris_logo.jpg',
         title: 'Paris',
         width: '20%',
         page: 'CityPage'
     },
     {
-        url: '../images/amsterdam.jpg',
+        url: '../images/amsterdam/amsterdam_logo.jpg',
         title: 'Amsterdam',
         width: '20%',
         page: 'CityPage'
     },
     {
-        url: '../images/london_small.jpg',
+        url: '../images/london/london_logo.jpg',
         title: 'London',
         width: '20%',
         page: 'CityPage'
     },
     {
-        url: '../images/edinburgh_small.jpg',
+        url: '../images/edinburgh/edinburgh_logo.jpg',
         title: 'Edinburgh',
         width: '20%',
         page: 'CityPage'
     },
     {
-        url: '../images/rome_small.jpg',
+        url: '../images/rome/rome_logo.jpg',
         title: 'Rome',
         width: '20%',
         page: 'CityPage'
@@ -46,7 +46,7 @@ export default class HomePage extends Component {
                 <br></br>
                 <h3>Where would you like to travel?</h3>
                 <br></br>
-                <ImageButtonsList onPageChange={this.props.onPageChange} buttonList={citiesImages} />
+                <ImageButtonsList onPageChange={this.props.onPageChange} citiesList={cities}/>
             </div>
         );
     }

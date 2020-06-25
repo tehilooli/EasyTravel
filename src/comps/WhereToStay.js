@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 import TextField from '@material-ui/core/TextField';
-import MenuItem from '@material-ui/core/MenuItem';
-import InputLabel from '@material-ui/core/InputLabel';
-import Select from '@material-ui/core/Select';
 import Button from '@material-ui/core/Button';
 
 export default class WhereToStay extends Component {
@@ -17,8 +14,8 @@ export default class WhereToStay extends Component {
                         id="date"
                         label="Check In"
                         type="date"
-                        defaultValue="2017-05-24"
-                        className="EasyTravel"
+                        defaultValue="2020-12-24"
+                        className="whiteBackground"
                         InputLabelProps={{
                             shrink: true,
                         }}
@@ -29,29 +26,29 @@ export default class WhereToStay extends Component {
                         id="date"
                         label="Check Out"
                         type="date"
-                        defaultValue="2017-05-24"
-                        className="EasyTravel"
+                        defaultValue="2020-12-29"
+                        className="whiteBackground"
                         InputLabelProps={{
                             shrink: true,
                         }}
                     />
                     <br></br>
                     <br></br>
-                    <InputLabel id="label">Number of Guests</InputLabel>
-                    <Select labelId="label" id="select" value="">
-                        <MenuItem value="1">1</MenuItem>
-                        <MenuItem value="2">2</MenuItem>
-                        <MenuItem value="3">3</MenuItem>
-                        <MenuItem value="4">4</MenuItem>
-                        <MenuItem value="5">5</MenuItem>
-                        <MenuItem value="6">6</MenuItem>
-                        <MenuItem value="7">7</MenuItem>
-                        <MenuItem value="8">8</MenuItem>
-                    </Select>
+                    <label htmlFor="exampleFormControlSelect1">Number of Guests</label>
+                    <select className="form-control" id="exampleFormControlSelect1">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                    </select>
                 </form>
                 <br></br>
                 <br></br>
-                <Button variant="contained" color="primary">Search</Button>
+                <Button variant="contained" color="primary" href="https://www.booking.com/">Search</Button>
             </div>
         );
     }

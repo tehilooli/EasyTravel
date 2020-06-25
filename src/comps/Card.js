@@ -7,13 +7,11 @@ import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
 import Collapse from '@material-ui/core/Collapse';
-import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
-import { red } from '@material-ui/core/colors';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
+import { red } from '@material-ui/core/colors';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -36,37 +34,38 @@ const useStyles = makeStyles((theme) => ({
   expandOpen: {
     transform: 'rotate(180deg)',
   },
-  avatar: {
-    backgroundColor: red[500],
+  favorite: {
+    outline: 'none!important',
   },
+  like: {
+    color: 'none',
+  },
+  liked: {
+    color: 'red',
+  }
 }));
 
 export default function RecipeReviewCard(props) {
+
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
+  const [liked, setLiked] = React.useState(false);
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
 
+  const handleLikeClick = () => {
+    setLiked(!liked);
+  }
+
   return (
     <Card
       className={classes.root}
-      key={props.uniqueId}
-      style={{ display: 'flex' }}
-      style={{ flexDirection: 'column' }}
-      style={{ justifyContent: 'space-between' }}>
+      key={props.uniqueId}>
       <CardHeader
-        avatar={
-          <Avatar aria-label="recipe" className={classes.avatar}>
-            R
-          </Avatar>
-        }
-        action={
-          <IconButton aria-label="settings">
-            <MoreVertIcon />
-          </IconButton>
-        }
+        titleTypographyProps={{variant:'subtitle1'}}
+        subheaderTypographyProps={{variant:'subtitle2'}}
         title={props.title}
         subheader={props.subheader}
       />
@@ -81,8 +80,12 @@ export default function RecipeReviewCard(props) {
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
+        <IconButton 
+          aria-label="add to favorites" 
+          className={clsx(classes.favorite, classes.like, {[classes.liked]: liked})}
+          onClick={handleLikeClick}
+          >         
+            <FavoriteIcon />
         </IconButton>
         <IconButton
           className={clsx(classes.expand, {

@@ -9,7 +9,7 @@ const parisRestaurants = [
   {
     title: 'Chez Ajia',
     subheader: 'Asian',
-    image: './images/chez.jpeg',
+    image: './images/paris/restaurants/chez.jpeg',
     firstInfo: "A few steps from the metro Saint-Paul, Chez Ajia offers a culinary journey "
       + "to the small island of Taiwan. In a cozy and modern setting, "
       + "discover traditional family cooking, which will not fail to awaken your taste buds.",
@@ -21,7 +21,7 @@ const parisRestaurants = [
   {
     title: 'Royal Dragon',
     subheader: 'Asian',
-    image: './images/royaldragon.jpg',
+    image: './images/paris/restaurants/royaldragon.jpg',
     firstInfo: "Taste mouthwatering nems, sushi and soup that are served at Royal DRAGON. "
       + "If hungry, come here for tasty parfait, beignets and tiramisu. Good wine is among the best drinks to try.",
     moreInfo: "You can find more info at https://www.facebook.com/royalDraogon/",
@@ -32,7 +32,7 @@ const parisRestaurants = [
   {
     title: 'Via Emilia',
     subheader: 'Italian',
-    image: './images/viaemilia.jpg',
+    image: './images/paris/restaurants/viaemilia.jpg',
     firstInfo: "The cozy atmosphere of this place allows guests to relax after a hard working day. "
       + "The competent staff works hard, stays positive and makes this place great. "
       + "If you want to experience fabulous service, you should visit this spot.",
@@ -44,7 +44,7 @@ const parisRestaurants = [
   {
     title: 'Tra di Noi',
     subheader: 'Italian',
-    image: './images/noi.png',
+    image: './images/paris/restaurants/noi.png',
     firstInfo: "Absolutely brilliant. Off the tourist trail, but a must visit. "
       + "Very authentic Italian food, great service, faultless all round.",
     moreInfo: "You can find more info at https://www.facebook.com/tradinoiparis/",
@@ -55,7 +55,7 @@ const parisRestaurants = [
   {
     title: 'La Table de Colette',
     subheader: 'Local Food',
-    image: './images/colette.jpg',
+    image: './images/paris/restaurants/colette.jpg',
     firstInfo: "A mix of welcoming staff, incredible, "
       + "down to earth owner and amazing, fresh food makes this place very special.",
     moreInfo: "You can find more info at http://www.latabledecolette.fr/",
@@ -66,7 +66,7 @@ const parisRestaurants = [
   {
     title: 'Boutary',
     subheader: 'Local Food',
-    image: './images/boutary.jpg',
+    image: './images/paris/restaurants/boutary.jpg',
     firstInfo: "Boutary is a chic and trendy 'boutique bistro' with "
       + "traditional French roots but a modern and affordable approach to gastronomic cuisine.",
     moreInfo: "You can find more info at http://www.boutary-restaurant.com/",
@@ -79,7 +79,7 @@ const amsterdamRestaurants = [
   {
     title: 'Tasty Asia',
     subheader: 'Asian',
-    image: './images/tastyasia.jpg',
+    image: './images/amsterdam/restaurants/tastyasia.jpg',
     firstInfo: "a small, but cozy asian fusion restaurant nearby the famous Rembrandt Square.",
     moreInfo: "You can find more info at http://www.tasty-asia.nl/",
     uniqueId: '1tastyasia1',
@@ -89,7 +89,7 @@ const amsterdamRestaurants = [
   {
     title: 'Rakang',
     subheader: 'Asian',
-    image: './images/rakang.jpg',
+    image: './images/amsterdam/restaurants/rakang.jpg',
     firstInfo: "Situated in Amsterdams nicest area Jordaan, Rakang is a place you shouldn't miss. "
       + "It's a place that stimulates your creativity and definitely guarantees you lots of fun.",
     moreInfo: "You can find more info at http://www.rakang.nl/",
@@ -100,7 +100,7 @@ const amsterdamRestaurants = [
   {
     title: 'Dope',
     subheader: 'Italian',
-    image: './images/dope.jpg',
+    image: './images/amsterdam/restaurants/dope.jpg',
     firstInfo: "Exceptional pizza with top notch ingredients and very reasonable value for the money.",
     moreInfo: "You can find more info at https://www.pizzariadope-amsterdam.nl/",
     uniqueId: '3dope3',
@@ -110,7 +110,7 @@ const amsterdamRestaurants = [
   {
     title: 'Bussia',
     subheader: 'Italian',
-    image: './images/bussia.png',
+    image: './images/amsterdam/restaurants/bussia.jpg',
     firstInfo: "The best dinner of our week in Amsterdam. The food, service, and atmosphere are perfectly aligned.",
     moreInfo: "You can find more info at http://www.bussia.nl/",
     uniqueId: '4bussia4',
@@ -120,7 +120,7 @@ const amsterdamRestaurants = [
   {
     title: 'De Silveren Spiegel',
     subheader: 'Local Food',
-    image: './images/spiegel.jpg',
+    image: './images/amsterdam/restaurants/spiegel.jpg',
     firstInfo: "Elegance, tradition and hospitality are the core traits of one of "
       + "Amsterdam’s finest restaurants, de Silveren Spiegel (the Silver Mirror).",
     moreInfo: "You can find more info at https://www.desilverenspiegel.com/",
@@ -131,7 +131,7 @@ const amsterdamRestaurants = [
   {
     title: 'VISSER Amsterdam',
     subheader: 'Local Food',
-    image: './images/visser.jpg',
+    image: './images/amsterdam/restaurants/visser.jpg',
     firstInfo: "Fantastic spot in the beautiful and busy Jordaan area of Amsterdam.",
     moreInfo: "You can find more info at http://www.visseramsterdam.nl/",
     uniqueId: '6visser6',
@@ -143,69 +143,69 @@ const londonRestaurants = [
   {
     title: 'Amrutha Lounge',
     subheader: 'Asian',
-    image: './images/amruthalounge.jpg',
+    image: './images/london/restaurants/amruthalounge.jpg',
     firstInfo: "Innovative vegan dishes and heart-warming classics are lovingly prepared on the premises"
       + "by our chefs on a daily basis. The food is made from scratch with an emphasis on"
       + "taking simple ingredients and elevating them to extraordinary levels, that’s our version of ‘Vegan Soul Food’.",
     moreInfo: "You can find more info at https://www.amrutha.co.uk/",
     uniqueId: '1amruthalounge1',
-    avatar: 'R',
+    tags: [{ value: 'Asian' }],
   },
 
   {
     title: 'Yuu Kitchen',
     subheader: 'Asian',
-    image: './images/yuukitchen.jpg',
+    image: './images/london/restaurants/yuukitchen.jpg',
     firstInfo: "Yuu Kitchen Restaurant features authentic Japanese and South-East Asian flavours."
       + "This new gastronomy concept, uses the highest quality produce executed with precision cooking"
       + "in a fun and exciting setting. The menu is designed for sharing with a choice of small plates that will take you on an explosive flavour journey."
       + "Indulge in Asian favourites like gourmet Bao, Korean Ssam and Chicken Karaage.",
     moreInfo: "You can find more info at https://www.yuukitchen.com/",
     uniqueId: '2yuukitchen2',
-    avatar: 'R',
+    tags: [{ value: 'Asian' }],
   },
 
   {
     title: 'E Pellicci',
     subheader: 'Italian',
-    image: './images/epellicci.jpg',
+    image: './images/london/restaurants/epellicci.jpg',
     firstInfo: "A classic East London café that has been serving the local community for over a century!",
     moreInfo: "You can find more info at https://epellicci.co.uk/",
     uniqueId: '3epellicci3',
-    avatar: 'R',
+    tags: [{ value: 'Italian' }],
   },
 
   {
     title: 'Morso Abbey Road',
     subheader: 'Italian',
-    image: './images/morsoabbeyroad.jpg',
+    image: './images/london/restaurants/morsoabbeyroad.jpg',
     firstInfo: "Morso is a modern community-centred restaurant and bar, serving hand-crafted fresh pasta"
       + "and small plates of Italian bites alongside innovative Grappa-based cocktails.",
     moreInfo: "You can find more info at https://www.morsolondon.co.uk/",
     uniqueId: '4morsoabbeyroad4',
-    avatar: 'R',
+    tags: [{ value: 'Italian' }],
   },
 
   {
     title: 'The Lounge Cafe',
     subheader: 'British',
-    image: './images/theloungecafe.jpg',
+    image: './images/london/restaurants/theloungecafe.jpg',
     firstInfo: "The Victoria and Albert Museum is the world's leading museum of art, design, and performance,"
       + "representing more than 3,000 years of human creativity, with collections unrivaled in their scope and diversity and an inspiring range of events.",
     moreInfo: "You can find more info at https://www.facebook.com/loungecafewembley/",
     uniqueId: '5theloungecafe5',
-    avatar: 'R',
+    tags: [{ value: 'Local Food' }],
   },
 
   {
     title: 'The Golden Chippy',
     subheader: 'British',
-    image: './images/thegoldenchippy.jpg',
+    image: './images/london/restaurants/thegoldenchippy.jpg',
     firstInfo: "Golden Chippy is one of the most popular Fish and Chips Takeaway in Greenwich, London."
       + "The food is bursting with flavour that will never disappoint!",
     moreInfo: "You can find more info at https://thegoldenchippy.has.restaurant/",
     uniqueId: '6thegoldenchippy6',
-    avatar: 'R',
+    tags: [{ value: 'Local Food' }],
   },
 ]
 
@@ -213,7 +213,7 @@ const edinburghRestaurants = [
   {
     title: 'Chizuru Tei',
     subheader: 'Asian',
-    image: './images/chizurutei.jpg',
+    image: './images/edinburgh/restaurants/chizurutei.jpg',
     firstInfo: "Fresh and quality Japanese food at reasonable price!",
     moreInfo: "You can find more info at https://www.chizurutei.co.uk/",
     uniqueId: '1chizurutei1',
@@ -223,7 +223,7 @@ const edinburghRestaurants = [
   {
     title: 'Wee Buddha',
     subheader: 'Asian',
-    image: './images/weebuddha.jpg',
+    image: './images/edinburgh/restaurants/weebuddha.jpg',
     firstInfo: "Eclectic asian food, washed down with draught/bottled beer, cocktails or wine ...",
     moreInfo: "You can find more info at http://www.weebuddha.co.uk/",
     uniqueId: '2weebuddha2',
@@ -233,7 +233,7 @@ const edinburghRestaurants = [
   {
     title: 'Ristorante Isola',
     subheader: 'Italian',
-    image: './images/isola.jpg',
+    image: './images/edinburgh/restaurants/isola.jpg',
     firstInfo: "Isola is specialize in regional Sardinian and Mediterranean cuisine.",
     moreInfo: "You can find more info at https://www.ristoranteisola.co.uk/",
     uniqueId: '3isola3',
@@ -243,7 +243,7 @@ const edinburghRestaurants = [
   {
     title: 'Locanda De Gusti',
     subheader: 'Italian',
-    image: './images/gusti.png',
+    image: './images/edinburgh/restaurants/gusti.jpg',
     firstInfo: "TSouthern Italian using the very best of Italian and local Scottish produce.",
     moreInfo: "You can find more info at http://www.locandadegusti.com/",
     uniqueId: '4gusti4',
@@ -253,7 +253,7 @@ const edinburghRestaurants = [
   {
     title: 'The Kitchin',
     subheader: 'Local Food',
-    image: './images/kitchin.jpg',
+    image: './images/edinburgh/restaurants/kitchin.jpg',
     firstInfo: "The Kitchin presents modern British seasonal cuisine influenced by "
       + "French cooking techniques and an appreciation of the best quality ingredients available from Scotland's fantastic natural larder.",
     moreInfo: "You can find more info at https://thekitchin.com/",
@@ -264,7 +264,7 @@ const edinburghRestaurants = [
   {
     title: 'Cafe Marmalade',
     subheader: 'Local Food',
-    image: './images/marmalade.jpg',
+    image: './images/edinburgh/restaurants/marmalade.jpg',
     firstInfo: "Fantastic spot in the beautiful and busy Jordaan area of Amsterdam.",
     moreInfo: "You can find more info at https://www.facebook.com/cafemarmaladeleith/",
     uniqueId: '6marmalade6',
@@ -276,7 +276,7 @@ const romeRestaurants = [
   {
     title: 'Shiroya',
     subheader: 'Asian',
-    image: './images/shiroya.jpg',
+    image: './images/rome/restaurants/shiroya.jpg',
     firstInfo: "The best Japanese eating experience in Italy. As good as the best restaurants in Tokyo! Authentic, wellprepared.",
     moreInfo: "You can find more info at http://www.shiroya.it/",
     uniqueId: '1shiroya1',
@@ -286,7 +286,7 @@ const romeRestaurants = [
   {
     title: 'Lamian Bar',
     subheader: 'Asian',
-    image: './images/lamianbar.jpg',
+    image: './images/rome/restaurants/lamianbar.jpg',
     firstInfo: "Excellent restaurant. Fantastic cuisine. Extremely helpful staff.",
     moreInfo: "You can find more info at https://www.facebook.com/lamianbar/",
     uniqueId: '2lamianbar2',
@@ -296,7 +296,7 @@ const romeRestaurants = [
   {
     title: 'Bono Bottega Nostrana',
     subheader: 'Italian',
-    image: './images/bono.jpg',
+    image: './images/rome/restaurants/bono.jpg',
     firstInfo: "Fabulous little gem in Rome, superb food. "
       + "Simple sandwiches and taster boards lovingly crafted. "
       + "Lots of drinks for all tastes. An absolute must for your visit to Rome.",
@@ -308,7 +308,7 @@ const romeRestaurants = [
   {
     title: 'Vulio',
     subheader: 'Italian',
-    image: './images/vulio.jpg',
+    image: './images/rome/restaurants/vulio.jpg',
     firstInfo: "In the center of Rome, near Vatican City, a cool fast food of tipical apulian products.",
     moreInfo: "You can find more info at https://www.facebook.com/vuliopuglia/",
     uniqueId: '4vulio4',
@@ -318,7 +318,7 @@ const romeRestaurants = [
   {
     title: 'Ristorante Nerone',
     subheader: 'Local Food',
-    image: './images/ristorante.jpg',
+    image: './images/rome/restaurants/ristorante.jpg',
     firstInfo: "Incredible oasis of friendly service and amazing food.",
     moreInfo: "You can find more info at http://www.neronealviminale.it/",
     uniqueId: '5ristorante5',
@@ -328,7 +328,7 @@ const romeRestaurants = [
   {
     title: 'Pinsitaly Trevi',
     subheader: 'Local Food',
-    image: './images/pinsitaly.jpg',
+    image: './images/rome/restaurants/pinsitaly.jpg',
     firstInfo: "Excellent food, service and perfect rice balls. "
       + "Defiantly worth stopping here for a quick bite. A little slice of Italy tucked away.",
     moreInfo: "You can find more info at https://pinsitaly.com/",
@@ -346,15 +346,15 @@ export default class Restaurants extends Component {
   }
 
   whichCityArray = () => {
-    if (this.props.currentCity == "Paris") return parisRestaurants;
-    else if (this.props.currentCity == "Amsterdam") return amsterdamRestaurants;
-    else if (this.props.currentCity == "London") return londonRestaurants;
-    else if (this.props.currentCity == "Edinburgh") return edinburghRestaurants;
+    if (this.props.currentCity === "Paris") return parisRestaurants;
+    else if (this.props.currentCity === "Amsterdam") return amsterdamRestaurants;
+    else if (this.props.currentCity === "London") return londonRestaurants;
+    else if (this.props.currentCity === "Edinburgh") return edinburghRestaurants;
     else return romeRestaurants;
   }
 
-  search = (restaurants) => {
-    if (this.state.filteredTags.length == 0) return this.whichCityArray();
+  filterArray = (restaurants) => {
+    if (this.state.filteredTags.length === 0) return this.whichCityArray();
     else {
       return restaurants.filter(restaurant =>
         this.state.filteredTags.some(constraint =>
@@ -383,8 +383,7 @@ export default class Restaurants extends Component {
   render() {
     return (
       <div className="EasyTravel">
-        <FormControl component="fieldset" //className={classes.formControl}>
-        >
+        <FormControl component="fieldset">
           <FormGroup>
             <FormControlLabel
               control={<Checkbox
@@ -411,7 +410,7 @@ export default class Restaurants extends Component {
         </FormControl>
         <br></br>
         <br></br>
-        <CardsGrid cardsList={this.search(this.whichCityArray())}></CardsGrid>
+        <CardsGrid cardsList={this.filterArray(this.whichCityArray())}></CardsGrid>
       </div>
     );
   }

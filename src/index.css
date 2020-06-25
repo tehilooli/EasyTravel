@@ -33,3 +33,17 @@ h2 {
 h3, h4, h5 {
   font-family: 'Lato', sans-serif;
 }
+
+#filled-basic {
+  background-color: white;
+}
+
+.whiteBackground {
+  background-color: white;
+}
+
+.form-control {
+  width: 60px;
+  float: none;
+  margin: 0 auto;
+}
