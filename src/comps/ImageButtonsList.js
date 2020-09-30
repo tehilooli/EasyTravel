@@ -91,6 +91,7 @@ export default function ButtonBases(props) {
                     style={{
                         width: image.width,
                     }}
+                    href={image.path}
                     onClick={() => onPageChange(image.page, image.title)}
                 >
                     <span

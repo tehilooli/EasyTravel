@@ -1,5 +1,3 @@
-
-
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -47,3 +45,134 @@ h3, h4, h5 {
   float: none;
   margin: 0 auto;
 }
+
+
+
+.navbar .container-fluid>.navbar-header {
+  float: left;
+  margin-right: 10px;
+}
+
+.navbar .navbar-nav {
+  float: left;
+  margin: 5px;
+  flex-direction: row;
+}
+.nav>li {
+  float: left;
+}
+
+.navbar-nav > li{
+  padding-right:30px;
+}
+
+.nav-item {
+  margin: auto;
+}
+
+.logo {
+  width: 80px;
+  height: 80px;
+  float: left;
+  padding: 10px;
+}
+
+/* 
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  margin-left: 0;
+  
+}
+
+.navbar {
+  width: 100%;
+  overflow: hidden;
+  height: 90px;
+  line-height: 90px;
+  background: rgb(66, 62, 62);
+  flex-wrap: inherit;
+}
+
+.logo {
+  width: 80px;
+  height: 80px;
+  float: left;
+  padding: 10px;
+}
+
+.menu {
+  float: left;
+  margin-bottom: 0;
+  padding: 14px;
+  margin-right: 790px;
+}
+
+.menu li {
+  float: left;
+  width: 120px;
+  height: 110px;
+  line-height: 70px;
+  text-align: center;
+  list-style: none; 
+  color: powderblue;
+}
+
+.menu li a {
+  text-decoration: none;
+  text-transform: uppercase;
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+  color: powderblue;
+}
+
+.menu li:hover {
+  background: grey;
+}
+
+
+
+.searchbar[type=text] {
+  border: none;
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 17px;
+  float: none;
+}
+
+
+.autocomplete {
+  float: left;
+}
+
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  width: 100%;
+  margin-top: 0px;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: #000;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #555;
+}
+
+*/

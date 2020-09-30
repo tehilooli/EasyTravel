@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import CardsGrid from './CardsGrid';
+//import CardsGrid from './CardsGrid';
+import ItemsGrid from './ItemsGrid';
 import FormControl from '@material-ui/core/FormControl';
 import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 
-const parisRestaurants = [
+/*const parisRestaurants = [
   {
     title: 'Chez Ajia',
     subheader: 'Asian',
@@ -265,7 +266,7 @@ const edinburghRestaurants = [
     title: 'Cafe Marmalade',
     subheader: 'Local Food',
     image: './images/edinburgh/restaurants/marmalade.jpg',
-    firstInfo: "Fantastic spot in the beautiful and busy Jordaan area of Amsterdam.",
+    firstInfo: "Outstanding service in a very pleasant atmosphere to go with excellent food.",
     moreInfo: "You can find more info at https://www.facebook.com/cafemarmaladeleith/",
     uniqueId: '6marmalade6',
     tags: [{ value: 'Local Food' }],
@@ -335,22 +336,72 @@ const romeRestaurants = [
     uniqueId: '6pinsitaly6',
     tags: [{ value: 'Local Food' }],
   },
-]
+]*/
 
 export default class Restaurants extends Component {
   constructor(props) {
     super(props);
     this.state = {
       filteredTags: [],
+      loadingParisRes: true,
+      parisRestaurants: [],
+      loadingAmsterdamRes: true,
+      amsterdamRestaurants: [],
+      loadingLondonRes: true,
+      londonRestaurants: [],
+      loadingEdinburghRes: true,
+      edinburghRestaurants: [],
+      loadingRomeRes: true,
+      romeRestaurants: [],
     }
   }
 
+  async componentDidMount() {
+    const urlParis = "http://127.0.0.1:5000/parisrestaurants";
+    const urlAmsterdam = "http://127.0.0.1:5000/amsterdamrestaurants";
+    const urlLondon = "http://127.0.0.1:5000/londonrestaurants";
+    const urlEdinburgh = "http://127.0.0.1:5000/edinburghrestaurants";
+    const urlRome = "http://127.0.0.1:5000/romerestaurants";
+
+    const responseParis = await fetch(urlParis);
+    const responseAmsterdam = await fetch(urlAmsterdam);
+    const responseLondon = await fetch(urlLondon);
+    const responseEdinburgh = await fetch(urlEdinburgh);
+    const responseRome = await fetch(urlRome);
+
+    const dataParis = await responseParis.json();
+    const dataAmsterdam = await responseAmsterdam.json();
+    const dataLondon = await responseLondon.json();
+    const dataEdinburgh = await responseEdinburgh.json();
+    const dataRome = await responseRome.json();
+
+    console.log(dataParis);
+    console.log(dataAmsterdam);
+    console.log(dataLondon);
+    console.log(dataEdinburgh);
+    console.log(dataRome);
+
+    this.setState(
+      {
+        loadingParisRes: false,
+        parisRestaurants: dataParis,
+        loadingAmsterdamRes: false,
+        amsterdamRestaurants: dataAmsterdam,
+        loadingLondonRes: false,
+        londonRestaurants: dataLondon,
+        loadingEdinburghRes: false,
+        edinburghRestaurants: dataEdinburgh,
+        loadingRomeRes: false,
+        romeRestaurants: dataRome,
+      })
+  }
+
   whichCityArray = () => {
-    if (this.props.currentCity === "Paris") return parisRestaurants;
-    else if (this.props.currentCity === "Amsterdam") return amsterdamRestaurants;
-    else if (this.props.currentCity === "London") return londonRestaurants;
-    else if (this.props.currentCity === "Edinburgh") return edinburghRestaurants;
-    else return romeRestaurants;
+    if (this.props.currentCity === "Paris") return this.state.parisRestaurants;
+    else if (this.props.currentCity === "Amsterdam") return this.state.amsterdamRestaurants;
+    else if (this.props.currentCity === "London") return this.state.londonRestaurants;
+    else if (this.props.currentCity === "Edinburgh") return this.state.edinburghRestaurants;
+    else return this.state.romeRestaurants;
   }
 
   filterArray = (restaurants) => {
@@ -381,6 +432,36 @@ export default class Restaurants extends Component {
   }
 
   render() {
+    if (this.state.loadingParisRes) {
+      return <div><h3>loading Paris restaurants...</h3></div>
+    }
+    if (!this.state.parisRestaurants) {
+      return <div>didn't get the Paris restaurants</div>
+    }
+    if (this.state.loadingAmsterdamRes) {
+      return <div><h3>loading Amsterdam restaurants...</h3></div>
+    }
+    if (!this.state.amsterdamRestaurants) {
+      return <div>didn't get the Amsterdam restaurants</div>
+    }
+    if (this.state.loadingLondonRes) {
+      return <div><h3>loading London restaurants...</h3></div>
+    }
+    if (!this.state.londonRestaurants) {
+      return <div>didn't get the London restaurants</div>
+    }
+    if (this.state.loadingEdinburghRes) {
+      return <div><h3>loading Edinburgh restaurants...</h3></div>
+    }
+    if (!this.state.edinburghRestaurants) {
+      return <div>didn't get the Edinburgh restaurants</div>
+    }
+    if (this.state.loadingRomeRes) {
+      return <div><h3>loading Rome restaurants...</h3></div>
+    }
+    if (!this.state.romeRestaurants) {
+      return <div>didn't get the Rome restaurants</div>
+    }
     return (
       <div className="EasyTravel">
         <FormControl component="fieldset">
@@ -410,7 +491,7 @@ export default class Restaurants extends Component {
         </FormControl>
         <br></br>
         <br></br>
-        <CardsGrid cardsList={this.filterArray(this.whichCityArray())}></CardsGrid>
+        <ItemsGrid cardsList={this.filterArray(this.whichCityArray())}></ItemsGrid>
       </div>
     );
   }
