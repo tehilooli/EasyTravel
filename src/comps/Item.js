@@ -27,7 +27,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function ComplexGrid(props) {
-
     const classes = useStyles();
 
     return (
@@ -37,10 +36,10 @@ export default function ComplexGrid(props) {
             <Grid container spacing={2}>
                 <Grid item>
                     <ButtonBase className={classes.image} >
-                        <img 
-                            className={classes.img} 
-                            alt="complex" 
-                            src={props.image}/>
+                        <img
+                            className={classes.img}
+                            alt="complex"
+                            src={props.image} />
                     </ButtonBase>
                 </Grid>
                 <Grid item xs={12} sm container>

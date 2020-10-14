@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-
 import { makeStyles } from '@material-ui/core/styles';
 import Stepper from '@material-ui/core/Stepper';
 import Step from '@material-ui/core/Step';
@@ -27,7 +26,6 @@ function getSteps() {
 }
 
 export default function WhereToStay() {
-
     const classes = useStyles();
     const [activeStep, setActiveStep] = React.useState(0);
     const [location, setLocation] = React.useState(0);
@@ -71,7 +69,7 @@ export default function WhereToStay() {
                     <div>
                         <br></br>
                         <br></br>
-                        <TextField id="filled-basic" label="Choose a location" variant="filled" onChange={handleLocationSearch}/>
+                        <TextField id="filled-basic" label="Choose a location" variant="filled" onChange={handleLocationSearch} />
                     </div>
                 );
             case 1:
@@ -141,93 +139,40 @@ export default function WhereToStay() {
                 })}
             </Stepper>
             <div>
-                {activeStep === steps.length ? 
-                (
-                    <div>
-                        <br></br>
-                        <br></br>
-                        {/*<Typography className={classes.instructions}>All steps completed - you&apos;re finished</Typography>*/}
-                        <Typography className={classes.instructions}>
-                            You chose to travel to: {location}
-                            <br></br>
-                            The dates of your trip are from {checkInDate} to {checkOutDate}
-                            <br></br>
-                            The number of guests is: {guests}
-                        </Typography>
-                        <br></br>
-                        <Button variant="contained" color="primary" href="https://www.booking.com/">Search</Button>
-                        <br></br>
-                        <br></br>
-                        <Button onClick={handleReset} className={classes.button}>Reset</Button>
-                    </div>
-                ) 
-                : (
-                    <div>
-                        <Typography className={classes.instructions}>{getStepContent(activeStep)}</Typography>
+                {activeStep === steps.length ?
+                    (
                         <div>
                             <br></br>
                             <br></br>
-                            <Button disabled={activeStep === 0} onClick={handleBack} className={classes.button}>Back</Button>
-                            <Button variant="contained" color="primary" onClick={handleNext} className={classes.button}>
-                                {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
-                            </Button>
+                            {/*<Typography className={classes.instructions}>All steps completed - you&apos;re finished</Typography>*/}
+                            <Typography className={classes.instructions}>
+                                You chose to travel to: {location}
+                                <br></br>
+                            The dates of your trip are from {checkInDate} to {checkOutDate}
+                                <br></br>
+                            The number of guests is: {guests}
+                            </Typography>
+                            <br></br>
+                            <Button variant="contained" color="primary" href="https://www.booking.com/">Search</Button>
+                            <br></br>
+                            <br></br>
+                            <Button onClick={handleReset} className={classes.button}>Reset</Button>
                         </div>
-                    </div>
-                )}
+                    )
+                    : (
+                        <div>
+                            <Typography className={classes.instructions}>{getStepContent(activeStep)}</Typography>
+                            <div>
+                                <br></br>
+                                <br></br>
+                                <Button disabled={activeStep === 0} onClick={handleBack} className={classes.button}>Back</Button>
+                                <Button variant="contained" color="primary" onClick={handleNext} className={classes.button}>
+                                    {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
+                                </Button>
+                            </div>
+                        </div>
+                    )}
             </div>
         </div>
     );
 }
-
-
-/*export default class WhereToStay extends Component {
-    render() {
-        return (
-            <div className="EasyTravel">
-                <form className="EasyTravel" noValidate autoComplete="off">
-                    <TextField id="filled-basic" label="Where To?" variant="filled" />
-                    <br></br>
-                    <br></br>
-                    <TextField
-                        id="date"
-                        label="Check In"
-                        type="date"
-                        defaultValue="2020-12-24"
-                        className="whiteBackground"
-                        InputLabelProps={{
-                            shrink: true,
-                        }}
-                    />
-                    <br></br>
-                    <br></br>
-                    <TextField
-                        id="date"
-                        label="Check Out"
-                        type="date"
-                        defaultValue="2020-12-29"
-                        className="whiteBackground"
-                        InputLabelProps={{
-                            shrink: true,
-                        }}
-                    />
-                    <br></br>
-                    <br></br>
-                    <label htmlFor="exampleFormControlSelect1">Number of Guests</label>
-                    <select className="form-control" id="exampleFormControlSelect1">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                        <option>6</option>
-                        <option>7</option>
-                        <option>8</option>
-                    </select>
-                </form>
-                <br></br>
-                <br></br>
-                <Button variant="contained" color="primary" href="https://www.booking.com/">Search</Button>
-            </div>
-        );
-    }
-}*/

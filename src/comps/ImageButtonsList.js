@@ -79,25 +79,25 @@ const useStyles = makeStyles((theme) => ({
 export default function ButtonBases(props) {
     const classes = useStyles();
     const onPageChange = props.onPageChange;
-    
+
     return (
         <div className={classes.root}>
             {props.citiesList.map((image) => (
                 <ButtonBase
                     focusRipple
-                    key={image.title}
+                    key={image[0]}
                     className={classes.image}
                     focusVisibleClassName={classes.focusVisible}
                     style={{
-                        width: image.width,
+                        width: image[3],
                     }}
-                    href={image.path}
-                    onClick={() => onPageChange(image.page, image.title)}
+                    href={image[4]}
+                    onClick={() => onPageChange(image[5], image[1])}
                 >
                     <span
                         className={classes.imageSrc}
                         style={{
-                            backgroundImage: `url(${image.url})`,
+                            backgroundImage: `url(${image[2]})`,
                         }}
                     />
                     <span className={classes.imageBackdrop} />
@@ -108,7 +108,7 @@ export default function ButtonBases(props) {
                             color="inherit"
                             className={classes.imageTitle}
                         >
-                            {image.title}
+                            {image[1]}
                             <span className={classes.imageMarked} />
                         </Typography>
                     </span>

@@ -45,7 +45,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function RecipeReviewCard(props) {
-
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
   const [liked, setLiked] = React.useState(false);
@@ -63,8 +62,8 @@ export default function RecipeReviewCard(props) {
       className={classes.root}
       key={props.uniqueId}>
       <CardHeader
-        titleTypographyProps={{variant:'subtitle1'}}
-        subheaderTypographyProps={{variant:'subtitle2'}}
+        titleTypographyProps={{ variant: 'subtitle1' }}
+        subheaderTypographyProps={{ variant: 'subtitle2' }}
         title={props.title}
         subheader={props.subheader}
       />
@@ -79,15 +78,15 @@ export default function RecipeReviewCard(props) {
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton 
-          aria-label="add to favorites" 
-          className={clsx(classes.outline, classes.like, {[classes.liked]: liked})}
+        <IconButton
+          aria-label="add to favorites"
+          className={clsx(classes.outline, classes.like, { [classes.liked]: liked })}
           onClick={handleLikeClick}
-          >         
-            <FavoriteIcon />
+        >
+          <FavoriteIcon />
         </IconButton>
         <IconButton
-          className={clsx(classes.outline, classes.expand, {[classes.expandOpen]: expanded,})}
+          className={clsx(classes.outline, classes.expand, { [classes.expandOpen]: expanded, })}
           onClick={handleExpandClick}
           aria-expanded={expanded}
           aria-label="show more"
