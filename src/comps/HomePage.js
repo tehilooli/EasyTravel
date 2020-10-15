@@ -34,7 +34,7 @@ export default class HomePage extends Component {
                 <h3>Where would you like to travel?</h3>
                 <br></br>
                 <br></br>
-                <ImageButtonsList onPageChange={this.props.onPageChange} citiesList={this.state.cities} />
+                <ImageButtonsList citiesList={this.state.cities} />
             </div>
         );
     }

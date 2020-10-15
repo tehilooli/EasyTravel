@@ -78,7 +78,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function ButtonBases(props) {
     const classes = useStyles();
-    const onPageChange = props.onPageChange;
 
     return (
         <div className={classes.root}>
@@ -92,7 +91,6 @@ export default function ButtonBases(props) {
                         width: image[3],
                     }}
                     href={image[4]}
-                    onClick={() => onPageChange(image[5], image[1])}
                 >
                     <span
                         className={classes.imageSrc}
