@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-//import EasyTravel from './comps/EasyTravel';
 import HomePage from './comps/HomePage';
 import About from './comps/About';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
@@ -39,5 +38,3 @@ function App() {
 }
 
 export default App;
-
-/*<EasyTravel />*/

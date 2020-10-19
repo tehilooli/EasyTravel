@@ -42,12 +42,6 @@ export default class Attractions extends Component {
     const dataEdinburgh = await responseEdinburgh.json();
     const dataRome = await responseRome.json();
 
-    console.log(dataParis);
-    console.log(dataAmsterdam);
-    console.log(dataLondon);
-    console.log(dataEdinburgh);
-    console.log(dataRome);
-
     this.setState(
       {
         loadingParisAtt: false,

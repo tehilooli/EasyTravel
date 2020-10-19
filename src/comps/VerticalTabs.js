@@ -3,6 +3,7 @@ import Flights from './Flights';
 import WhereToStay from './WhereToStay';
 import Attractions from './Attractions';
 import Restaurants from './Restaurants';
+import Facts from './Facts';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import Tabs from '@material-ui/core/Tabs';
@@ -82,6 +83,7 @@ export default function VerticalTabs(props) {
                 <Tab label={props.optionsList[1]} className={classes.panels} {...a11yProps(1)} />
                 <Tab label={props.optionsList[2]} className={classes.panels} {...a11yProps(2)} />
                 <Tab label={props.optionsList[3]} className={classes.panels} {...a11yProps(3)} />
+                <Tab label={props.optionsList[4]} className={classes.panels} {...a11yProps(4)} />
             </Tabs>
             <TabPanel value={value} index={0}>
                 <Flights></Flights>
@@ -94,6 +96,9 @@ export default function VerticalTabs(props) {
             </TabPanel>
             <TabPanel value={value} index={3}>
                 <Restaurants currentCity={props.selectedCity}></Restaurants>
+            </TabPanel>
+            <TabPanel value={value} index={4}>
+                <Facts currentCity={props.selectedCity}></Facts>
             </TabPanel>
         </div>
     );

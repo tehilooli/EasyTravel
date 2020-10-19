@@ -132,3 +132,49 @@ def rome_restaurants_data():
     rome_restaurants = cur.fetchall()
     cur.close()
     return json.dumps(rome_restaurants)
+
+
+@app.route('/parisfacts', methods=['GET'])
+def paris_facts_data():
+    cur = mysql.connection.cursor()
+    cur.execute("SELECT * FROM facts WHERE city_key = 1")
+    paris_facts = cur.fetchall()
+    cur.close()
+    return json.dumps(paris_facts)
+
+
+@app.route('/amsterdamfacts', methods=['GET'])
+def amsterdam_facts_data():
+    cur = mysql.connection.cursor()
+    cur.execute("SELECT * FROM facts WHERE city_key = 2")
+    amsterdam_facts = cur.fetchall()
+    cur.close()
+    return json.dumps(amsterdam_facts)
+
+
+@app.route('/londonfacts', methods=['GET'])
+def london_facts_data():
+    cur = mysql.connection.cursor()
+    cur.execute("SELECT * FROM facts WHERE city_key = 3")
+    london_facts = cur.fetchall()
+    cur.close()
+    return json.dumps(london_facts)
+
+
+@app.route('/edinburghfacts', methods=['GET'])
+def edinburgh_facts_data():
+    cur = mysql.connection.cursor()
+    cur.execute("SELECT * FROM facts WHERE city_key = 4")
+    edinburgh_facts = cur.fetchall()
+    cur.close()
+    return json.dumps(edinburgh_facts)
+
+
+@app.route('/romefacts', methods=['GET'])
+def rome_facts_data():
+    cur = mysql.connection.cursor()
+    cur.execute("SELECT * FROM facts WHERE city_key = 5")
+    rome_facts = cur.fetchall()
+    cur.close()
+    return json.dumps(rome_facts)
+
