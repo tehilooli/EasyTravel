@@ -93,35 +93,45 @@ export default class Attractions extends Component {
   }
 
   render() {
-    if (this.state.loadingParisAtt) {
-      return <div><h3>loading Paris attractions...</h3></div>
+    if (this.props.currentCity === "Paris") {
+      if (this.state.loadingParisAtt) {
+        return <div><h3>loading Paris attractions...</h3></div>
+      }
+      if (!this.state.parisAttractions) {
+        return <div>didn't get the Paris attractions</div>
+      }
     }
-    if (!this.state.parisAttractions) {
-      return <div>didn't get the Paris attractions</div>
+    else if (this.props.currentCity === "Amsterdam") {
+      if (this.state.loadingAmsterdamAtt) {
+        return <div><h3>loading Amsterdam attractions...</h3></div>
+      }
+      if (!this.state.amsterdamAttractions) {
+        return <div>didn't get the Amsterdam attractions</div>
+      }
     }
-    if (this.state.loadingAmsterdamAtt) {
-      return <div><h3>loading Amsterdam attractions...</h3></div>
+    else if (this.props.currentCity === "London") {
+      if (this.state.loadingLondonAtt) {
+        return <div><h3>loading London attractions...</h3></div>
+      }
+      if (!this.state.londonAttractions) {
+        return <div>didn't get the London attractions</div>
+      }
     }
-    if (!this.state.amsterdamAttractions) {
-      return <div>didn't get the Amsterdam attractions</div>
+    else if (this.props.currentCity === "Edinburgh") {
+      if (this.state.loadingEdinburghAtt) {
+        return <div><h3>loading Edinburgh attractions...</h3></div>
+      }
+      if (!this.state.edinburghAttractions) {
+        return <div>didn't get the Edinburgh attractions</div>
+      }
     }
-    if (this.state.loadingLondonAtt) {
-      return <div><h3>loading London attractions...</h3></div>
-    }
-    if (!this.state.londonAttractions) {
-      return <div>didn't get the London attractions</div>
-    }
-    if (this.state.loadingEdinburghAtt) {
-      return <div><h3>loading Edinburgh attractions...</h3></div>
-    }
-    if (!this.state.edinburghAttractions) {
-      return <div>didn't get the Edinburgh attractions</div>
-    }
-    if (this.state.loadingRomeAtt) {
-      return <div><h3>loading Rome attractions...</h3></div>
-    }
-    if (!this.state.romeAttractions) {
-      return <div>didn't get the Rome attractions</div>
+    else {
+      if (this.state.loadingRomeAtt) {
+        return <div><h3>loading Rome attractions...</h3></div>
+      }
+      if (!this.state.romeAttractions) {
+        return <div>didn't get the Rome attractions</div>
+      }
     }
     return (
       <div className="EasyTravel">

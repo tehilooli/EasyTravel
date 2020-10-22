@@ -18,19 +18,19 @@ function App() {
           <About />
         </Route>
         <Route path="/paris">
-          <CityPage selectedCity="Paris"/>
+          <CityPage selectedCity="Paris" />
         </Route>
         <Route path="/amsterdam">
-          <CityPage selectedCity="Amsterdam"/>
+          <CityPage selectedCity="Amsterdam" />
         </Route>
         <Route path="/london">
-          <CityPage selectedCity="London"/>
+          <CityPage selectedCity="London" />
         </Route>
         <Route path="/edinburgh">
-          <CityPage selectedCity="Edinburgh"/>
+          <CityPage selectedCity="Edinburgh" />
         </Route>
         <Route path="/rome">
-          <CityPage selectedCity="Rome"/>
+          <CityPage selectedCity="Rome" />
         </Route>
       </Router>
     </div >

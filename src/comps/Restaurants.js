@@ -42,12 +42,6 @@ export default class Restaurants extends Component {
     const dataEdinburgh = await responseEdinburgh.json();
     const dataRome = await responseRome.json();
 
-    console.log(dataParis);
-    console.log(dataAmsterdam);
-    console.log(dataLondon);
-    console.log(dataEdinburgh);
-    console.log(dataRome);
-
     this.setState(
       {
         loadingParisRes: false,
@@ -99,36 +93,47 @@ export default class Restaurants extends Component {
   }
 
   render() {
-    if (this.state.loadingParisRes) {
-      return <div><h3>loading Paris restaurants...</h3></div>
+    if (this.props.currentCity === "Paris") {
+      if (this.state.loadingParisRes) {
+        return <div><h3>loading Paris restaurants...</h3></div>
+      }
+      if (!this.state.parisRestaurants) {
+        return <div>didn't get the Paris restaurants</div>
+      }
     }
-    if (!this.state.parisRestaurants) {
-      return <div>didn't get the Paris restaurants</div>
+    else if (this.props.currentCity === "Amsterdam") {
+      if (this.state.loadingAmsterdamRes) {
+        return <div><h3>loading Amsterdam restaurants...</h3></div>
+      }
+      if (!this.state.amsterdamRestaurants) {
+        return <div>didn't get the Amsterdam restaurants</div>
+      }
     }
-    if (this.state.loadingAmsterdamRes) {
-      return <div><h3>loading Amsterdam restaurants...</h3></div>
+    else if (this.props.currentCity === "London") {
+      if (this.state.loadingLondonRes) {
+        return <div><h3>loading London restaurants...</h3></div>
+      }
+      if (!this.state.londonRestaurants) {
+        return <div>didn't get the London restaurants</div>
+      }
     }
-    if (!this.state.amsterdamRestaurants) {
-      return <div>didn't get the Amsterdam restaurants</div>
+    else if (this.props.currentCity === "Edinburgh") {
+      if (this.state.loadingEdinburghRes) {
+        return <div><h3>loading Edinburgh restaurants...</h3></div>
+      }
+      if (!this.state.edinburghRestaurants) {
+        return <div>didn't get the Edinburgh restaurants</div>
+      }
     }
-    if (this.state.loadingLondonRes) {
-      return <div><h3>loading London restaurants...</h3></div>
+    else {
+      if (this.state.loadingRomeRes) {
+        return <div><h3>loading Rome restaurants...</h3></div>
+      }
+      if (!this.state.romeRestaurants) {
+        return <div>didn't get the Rome restaurants</div>
+      }
     }
-    if (!this.state.londonRestaurants) {
-      return <div>didn't get the London restaurants</div>
-    }
-    if (this.state.loadingEdinburghRes) {
-      return <div><h3>loading Edinburgh restaurants...</h3></div>
-    }
-    if (!this.state.edinburghRestaurants) {
-      return <div>didn't get the Edinburgh restaurants</div>
-    }
-    if (this.state.loadingRomeRes) {
-      return <div><h3>loading Rome restaurants...</h3></div>
-    }
-    if (!this.state.romeRestaurants) {
-      return <div>didn't get the Rome restaurants</div>
-    }
+    
     return (
       <div className="EasyTravel">
         <FormControl component="fieldset">

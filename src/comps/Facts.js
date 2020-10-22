@@ -60,36 +60,47 @@ export default class Facts extends Component {
     }
 
     render() {
-        if (this.state.loadingParisFacts) {
-            return <div><h3>loading Paris facts...</h3></div>
+        if (this.props.currentCity === "Paris") {
+            if (this.state.loadingParisFacts) {
+                return <div><h3>loading Paris facts...</h3></div>
+            }
+            if (!this.state.parisFacts) {
+                return <div>didn't get the Paris facts</div>
+            }
         }
-        if (!this.state.parisFacts) {
-            return <div>didn't get the Paris facts</div>
+        else if (this.props.currentCity === "Amsterdam") {
+            if (this.state.loadingAmsterdamFacts) {
+                return <div><h3>loading Amsterdam facts...</h3></div>
+            }
+            if (!this.state.amsterdamFacts) {
+                return <div>didn't get the Amsterdam facts</div>
+            }
         }
-        if (this.state.loadingAmsterdamFacts) {
-            return <div><h3>loading Amsterdam facts...</h3></div>
+        else if (this.props.currentCity === "London") {
+            if (this.state.loadingLondonFacts) {
+                return <div><h3>loading London facts...</h3></div>
+            }
+            if (!this.state.londonFacts) {
+                return <div>didn't get the London facts</div>
+            }
         }
-        if (!this.state.amsterdamFacts) {
-            return <div>didn't get the Amsterdam facts</div>
+        else if (this.props.currentCity === "Edinburgh") {
+            if (this.state.loadingEdinburghFacts) {
+                return <div><h3>loading Edinburgh facts...</h3></div>
+            }
+            if (!this.state.edinburghFacts) {
+                return <div>didn't get the Edinburgh facts</div>
+            }
         }
-        if (this.state.loadingLondonFacts) {
-            return <div><h3>loading London facts...</h3></div>
+        else {
+            if (this.state.loadingRomeFacts) {
+                return <div><h3>loading Rome facts...</h3></div>
+            }
+            if (!this.state.romeFacts) {
+                return <div>didn't get the Rome facts</div>
+            }
         }
-        if (!this.state.londonFacts) {
-            return <div>didn't get the London facts</div>
-        }
-        if (this.state.loadingEdinburghFacts) {
-            return <div><h3>loading Edinburgh facts...</h3></div>
-        }
-        if (!this.state.edinburghFacts) {
-            return <div>didn't get the Edinburgh facts</div>
-        }
-        if (this.state.loadingRomeFacts) {
-            return <div><h3>loading Rome facts...</h3></div>
-        }
-        if (!this.state.romeFacts) {
-            return <div>didn't get the Rome facts</div>
-        }
+
         return (
             <div className="EasyTravel, factsContainer">
                 {this.whichCityArray().map((fact) => (

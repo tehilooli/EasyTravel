@@ -3,10 +3,12 @@ from flask_cors import CORS
 import json
 from flask_mysqldb import MySQL
 
-cities_options = ["Flights", "Where to Stay", "Attractions", "Restaurants"]
+cities_options = ["Flights", "Where to Stay", "Attractions", "Restaurants", "Facts"]
 
 app = Flask(__name__)
 CORS(app)
+if __name__ == "__name__":
+    app.run(debug=True)
 
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
@@ -178,3 +180,4 @@ def rome_facts_data():
     cur.close()
     return json.dumps(rome_facts)
 
+    
