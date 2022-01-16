@@ -1,3 +1,5 @@
+Link to project presentation (Hebrew): https://docs.google.com/presentation/d/1A70NujiFY3QwI59XyaDuUbahiuHeX5Xa/edit?usp=sharing&ouid=109948908583854462100&rtpof=true&sd=true
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
